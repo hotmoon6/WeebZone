@@ -242,28 +242,22 @@ def stats(update, context):
         sendMessage(stats, context.bot, update.message)
 
 def start(update, context):
-    buttons = ButtonMaker()
-    if EMOJI_THEME is True:
-        buttons.buildbutton(f"😎 {START_BTN1_NAME}", f"{START_BTN1_URL}")
-        buttons.buildbutton(f"🔥 {START_BTN2_NAME}", f"{START_BTN2_URL}")
-    else:
-        buttons.buildbutton(f"{START_BTN1_NAME}", f"{START_BTN1_URL}")
-        buttons.buildbutton(f"{START_BTN2_NAME}", f"{START_BTN2_URL}")
-    reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''This bot can mirror all your links to Google Drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+        start_string = f'''<b>My Name is Millie Bobby Brown! An Advanced Mirror Bot to Leech Torrent and Direct Links...
+Tap /{BotCommands.HelpCommand} to get a list of available commands
+
+© Spidey | Mindflayer's Mirror</b>
 '''
         if PICS:
-            sendPhoto(start_string, context.bot, update.message, random.choice(PICS), reply_markup)
+            sendPhoto(start_string, context.bot, update.message, random.choice(PICS))
         else:
-            sendMarkup(start_string, context.bot, update.message, reply_markup)
+            sendMessage(start_string, context.bot, update.message)
     else:
-        text = f"Not Authorized user, deploy your own mirror bot"
+        text = f"You're Not Authorized user!"
         if PICS:
-            sendPhoto(text, context.bot, update.message, random.choice(PICS), reply_markup)
+            sendPhoto(text, context.bot, update.message, random.choice(PICS))
         else:
-            sendMarkup(text, context.bot, update.message, reply_markup)
+            sendMessage(text, context.bot, update.message)
 
 def restart(update, context):
     cmd = update.effective_message.text.split(' ', 1)
