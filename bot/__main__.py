@@ -423,7 +423,7 @@ help_string_cmds = f'''
 '''
 
 def help(update, context):
-    sendMessage(help_string_cmds, context.bot, update.message)
+    sendMessage(help_string, context.bot, update.message)
 
        
 
