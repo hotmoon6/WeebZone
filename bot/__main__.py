@@ -422,7 +422,7 @@ help_string_cmds = f'''
 • <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
 '''
 
-def bot_help(update, context):
+def help(update, context):
     sendMessage(help_string_cmds, context.bot, update.message)
 
        
