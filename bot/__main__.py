@@ -324,11 +324,11 @@ def log(update, context):
 
 
 help_string = '''
-<b><a href='https://github.com/codewithweeb/mirror-with-weeb'>WeebZone</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
+<b><a href='https://t.me/arvinxoxo'>©️ Creator</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
 Choose a help category:
 '''
 
-help_string_telegraph_user = f'''
+help_string_cmds = f'''
 <b><u>👤 User Commands</u></b>
 <br><br>
 • <b>/{BotCommands.HelpCommand}</b>: To get this message
@@ -401,14 +401,8 @@ help_string_telegraph_user = f'''
 <br><br>
 • <b>/{BotCommands.SpeedCommand}</b>: Speedtest of Heroku server
 <br><br>
-• <b>/weebhelp</b>: Okatu helper
-'''
+• <b>/weebhelp</b>: Anime Lovers
 
-help_user = telegraph.create_page(
-    title=f"{TITLE_NAME} Help",
-    content=help_string_telegraph_user)["path"]
-
-help_string_telegraph_admin = f'''
 <b><u>🛡️ Admin Commands</u></b>
 <br><br>
 • <b>/{BotCommands.PingCommand}</b>: Check how long it takes to Ping the Bot
@@ -428,19 +422,11 @@ help_string_telegraph_admin = f'''
 • <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
 '''
 
-help_admin = telegraph.create_page(
-    title=f"{TITLE_NAME} Help",
-    content=help_string_telegraph_admin)["path"]
-
 def bot_help(update, context):
-    button = ButtonMaker()
-    if EMOJI_THEME is True:
-        button.buildbutton("👤 User", f"https://graph.org/{help_user}")
-        button.buildbutton("🛡️ Admin", f"https://graph.org/{help_admin}")
-    else:
-        button.buildbutton("User", f"https://graph.org/{help_user}")
-        button.buildbutton("Admin", f"https://graph.org/{help_admin}")
-    sendMarkup(help_string, context.bot, update.message, InlineKeyboardMarkup(button.build_menu(2)))
+   if PICS:
+    sendPhoto(help_string_cmds, context.bot, update.message, random.choice(PICS))
+   else:
+    sendMessage(help_string_cmds, context.bot, update.message)
 
        
 
