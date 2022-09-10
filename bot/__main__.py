@@ -324,98 +324,51 @@ def log(update, context):
 
 
 help_string = '''
-<b><u>👤 User Commands</u></b>
+List of Commands :-
 
-• <b>/{BotCommands.HelpCommand}</b>: To get this message
+/mirror - Mirror
+/zipmirror - Mirror and upload as zip
+/unzipmirror - Mirror and extract files
+/qbmirror - Mirror torrent using qBittorrent
+/qbzipmirror - Mirror torrent and upload as zip using qb
+/qbunzipmirror - Mirror torrent and extract files using qb
+/leech - Leech
+/zipleech - Leech and upload as zip
+/unzipleech - Leech and extract files
+/qbleech - Leech torrent using qBittorrent
+/qbzipleech - Leech torrent and upload as zip using qb
+/qbunzipleech - Leech torrent and extract using qb
+/clone - Copy file/folder to Drive
+/count - Count file/folder of Drive
+/watch - Mirror yt-dlp supported link
+/zipwatch - Mirror yt-dlp supported link as zip
+/leechwatch - Leech through yt-dlp supported link
+/leechzipwatch - Leech yt-dlp support link as zip
+/leechset - Leech settings
+/setthumb - Set thumbnail
+/status - Get Mirror Status message
+/rsslist - List all subscribed rss feed info
+/rssget - Get specific No. of links from specific rss feed
+/rsssub - Subscribe new rss feed
+/rssunsub - Unsubscribe rss feed by title
+/rssset - Rss Settings
+/list - Search files in Drive
+/search - Search for torrents with API
+/drop - Cancel a task
+/dropall - Cancel all tasks
+/del - Delete file/folder from Drive
+/log - Get the Bot Log
+/speedtest - Get server speedtest
+/mediainfo - Get information of media files
+/hash - Get Hash of telegram files
+/wayback - Internet archive 
+/shell - Run commands in Shell
+/restart - Restart the Bot
+/stats - Bot Usage Stats
+/usage - Heroku app usage
+/ping - Ping the Bot
+/help - All cmds with description
 
-• <b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring to Google Drive. Send <b>/{BotCommands.MirrorCommand}</b> for more help
-
-• <b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the file/folder compressed with zip extension
-
-• <b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the file/folder extracted from any archive extension
-
-• <b>/{BotCommands.QbMirrorCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> to select files before downloading
-
-• <b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start mirroring using qBittorrent and upload the file/folder compressed with zip extension
-
-• <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start mirroring using qBittorrent and upload the file/folder extracted from any archive extension
-
-• <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
-
-• <b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and upload the file/folder compressed with zip extension
-
-• <b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link][torent_file]: Start leeching to Telegram and upload the file/folder extracted from any archive extension
-
-• <b>/{BotCommands.QbLeechCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent, Use <b>/{BotCommands.QbLeechCommand} s</b> to select files before leeching
-
-• <b>/{BotCommands.QbZipLeechCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder compressed with zip extension
-
-• <b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder extracted from any archive extension
-
-• <b>/{BotCommands.CloneCommand}</b> [drive_url][gdtot_url]: Copy file/folder to Google Drive
-
-• <b>/{BotCommands.CountCommand}</b> [drive_url][gdtot_url]: Count file/folder of Google Drive
-
-• <b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file/folder from Google Drive (Only Owner & Sudo)
-
-• <b>/{BotCommands.WatchCommand}</b> [yt-dlp supported link]: Mirror yt-dlp supported link. Send <b>/{BotCommands.WatchCommand}</b> for more help
-
-• <b>/{BotCommands.ZipWatchCommand}</b> [yt-dlp supported link]: Mirror yt-dlp supported link as zip
-
-• <b>/{BotCommands.LeechWatchCommand}</b> [yt-dlp supported link]: Leech yt-dlp supported link
-
-• <b>/{BotCommands.LeechZipWatchCommand}</b> [yt-dlp supported link]: Leech yt-dlp supported link as zip
-
-• <b>/{BotCommands.LeechSetCommand}</b>: Leech settings
-
-• <b>/{BotCommands.SetThumbCommand}</b>: Reply photo to set it as Thumbnail
-
-• <b>/{BotCommands.RssListCommand}</b>: List all subscribed rss feed info
-
-• <b>/{BotCommands.RssGetCommand}</b>: [Title] [Number](last N links): Force fetch last N links
-
-• <b>/{BotCommands.RssSubCommand}</b>: [Title] [Rss Link] f: [filter]: Subscribe new rss feed
-
-• <b>/{BotCommands.RssUnSubCommand}</b>: [Title]: Unubscribe rss feed by title
-
-• <b>/{BotCommands.RssSettingsCommand}</b>: Rss Settings
-
-• <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
-
-• <b>/{BotCommands.CancelAllCommand}</b>: Cancel all downloading tasks
-
-• <b>/{BotCommands.ListCommand}</b> [query]: Search in Google Drive(s)
-
-• <b>/{BotCommands.SearchCommand}</b> [query]: Search for torrents with API
-     sites: <code>rarbg, 1337x, yts, etzv, tgx, torlock, piratebay, nyaasi, ettv</code>
-
-• <b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
-
-• <b>/{BotCommands.UsageCommand}</b>: Shows Heroku App Dyno Usage
-
-• <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
-
-• <b>/{BotCommands.SpeedCommand}</b>: Speedtest of Heroku server
-
-• <b>/weebhelp</b>: Anime Lovers
-
-<b><u>🛡️ Admin Commands</u></b>
-
-• <b>/{BotCommands.PingCommand}</b>: Check how long it takes to Ping the Bot
-
-• <b>/{BotCommands.AuthorizeCommand}</b>: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-• <b>/{BotCommands.UnAuthorizeCommand}</b>: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-• <b>/{BotCommands.AuthorizedUsersCommand}</b>: Show authorized users (Only Owner & Sudo)
-
-• <b>/{BotCommands.AddSudoCommand}</b>: Add sudo user (Only Owner)
-
-• <b>/{BotCommands.RmSudoCommand}</b>: Remove sudo users (Only Owner)
-
-• <b>/{BotCommands.RestartCommand}</b>: Restart and update the bot
-
-• <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
 '''
 
 def bot_help(update, context):
