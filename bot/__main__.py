@@ -423,9 +423,6 @@ help_string_cmds = f'''
 '''
 
 def bot_help(update, context):
-   if PICS:
-    sendPhoto(help_string_cmds, context.bot, update.message, random.choice(PICS))
-   else:
     sendMessage(help_string_cmds, context.bot, update.message)
 
        
