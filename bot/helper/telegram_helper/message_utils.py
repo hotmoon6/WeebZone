@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait
 from os import remove
 
 from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, status_reply_dict, status_reply_dict_lock, \
-                Interval, DOWNLOAD_STATUS_UPDATE_INTERVAL, RSS_CHAT_ID, bot, rss_session, AUTO_DELETE_UPLOAD_MESSAGE_DURATION
+                Interval, DOWNLOAD_STATUS_UPDATE_INTERVAL, RSS_CHAT_ID, bot, rss_session, AUTO_DELETE_UPLOAD_MESSAGE_DURATION, PICS
 from bot.helper.ext_utils.bot_utils import get_readable_message, setInterval
 
 
@@ -191,9 +191,9 @@ def sendStatusMessage(msg, bot):
             deleteMessage(bot, message)
             del status_reply_dict[msg.chat.id]
         if buttons == "":
-            message = sendMessage(progress, bot, msg)
+            message = sendPhoto(progress, bot, msg, PICS)
         else:
-            message = sendMarkup(progress, bot, msg, buttons)
+            message = sendPhoto(progress, bot, msg, PICS)
         status_reply_dict[msg.chat.id] = [message, time()]
         if not Interval:
             Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
