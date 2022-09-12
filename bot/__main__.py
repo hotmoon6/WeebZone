@@ -332,7 +332,7 @@ NOTE: Try each command without any perfix to see more detalis.
 
 Example: <code>/mirror2 https://yoururl.com</code>
 or
-(Reply with URL)
+(Reply with URL/File)
 
 /qbmirror2: [magnet link] or Reply with Torrent - Start Mirroring to Google Drive using qBittorrent.
 
