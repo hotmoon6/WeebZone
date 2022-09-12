@@ -324,21 +324,52 @@ def log(update, context):
 
 
 help_string = '''
-<b><u>👤 User Commands</u></b>
-• <b>/{BotCommands.HelpCommand}</b>: To get this message
-• <b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring to Google Drive. Send <b>/{BotCommands.MirrorCommand}</b> for more help
-• <b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the file/folder compressed with zip extension
-• <b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the file/folder extracted from any archive extension
-• <b>/{BotCommands.QbMirrorCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> to select files before downloading
-• <b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start mirroring using qBittorrent and upload the file/folder compressed with zip extension
-• <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start mirroring using qBittorrent and upload the file/folder extracted from any archive extension
-• <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
-• <b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and upload the file/folder compressed with zip extension
-• <b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link][torent_file]: Start leeching to Telegram and upload the file/folder extracted from any archive extension
-• <b>/{BotCommands.QbLeechCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent, Use <b>/{BotCommands.QbLeechCommand} s</b> to select files before leeching
-• <b>/{BotCommands.QbZipLeechCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder compressed with zip extension
-• <b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder extracted from any archive extension
-• <b>/{BotCommands.CloneCommand}</b> [drive_url][gdtot_url]: Copy file/folder to Google Drive
+List of Commands :-
+
+NOTE: Try each command without any perfix to see more detalis.
+
+/{BotCommands.mirrorCommand}: [url] Start mirroring to Google Drive.
+/{BotCommands.zipmirrorCommand}: Start mirroring and upload the file/folder compressed with zip extension.
+/{BotCommands.unzipmirrorCommand}: Start mirroring and upload the file/folder extracted from any archive extension.
+/{BotCommands.qbmirrorCommand}: [magnet link] or Reply with Torrent - Start Mirroring to Google Drive using qBittorrent.
+/{BotCommands.qbzipmirrorCommand}: Start mirroring using qBittorrent and upload the file/folder compressed with zip extension.
+/{BotCommands.qbunzipmirrorCommand}: Start mirroring using qBittorrent and upload the file/folder extracted from any archive extension.
+/{BotCommands.ytdlCommand}: Mirror yt-dlp supported link.
+/{BotCommands.ytdlzipCommand}: Mirror yt-dlp supported link as zip.
+/leech2: Start leeching to Telegram.
+/zipleech2: Start leeching and upload the file/folder compressed with zip extension.
+/unzipleech2: Start leeching and upload the file/folder extracted from any archive extension.
+/qbleech2: Start leeching using qBittorrent.
+/qbzipleech2: Start leeching using qBittorrent and upload the file/folder compressed with zip extension.
+/qbunzipleech2: Start leeching using qBittorrent and upload the file/folder extracted from any archive extension.
+/ytdlleech2: Leech yt-dlp supported link.
+/ytdlzipleech2: Leech yt-dlp supported link as zip.
+/clone2 [drive_url]: Copy file/folder to Google Drive.
+/count2 [drive_url]: Count file/folder of Google Drive.
+/del2 [drive_url]: Delete file/folder from Google Drive (Only Owner & Sudo).
+/leechset2 [query]: Leech settings.
+/setthumb2: Reply photo to set it as Thumbnail.
+/btsel2: Select files from torrents by gid or reply.
+/cancel2: Cancel task by gid or reply.
+/cancelall2: [query]: Cancel all [status] tasks.
+/list2 [query]: Search in Google Drive(s).
+/search2 [query]: Search for torrents with API.
+/status2: Shows a status of all the downloads.
+/stats2: Show stats of the machine where the bot is hosted in.
+/ping2: Check how long it takes to Ping the Bot (Only Owner & Sudo).
+/authorize2: Authorize a chat or a user to use the bot (Only Owner & Sudo).
+/unauthorize2: Unauthorize a chat or a user to use the bot (Only Owner & Sudo).
+/users2: Show authorized users (Only Owner & Sudo).
+/addsudo2: Add sudo user (Only Owner).
+/rmsudo2: Remove sudo users (Only Owner).
+/restart2: Restart and update the bot (Only Owner & Sudo).
+/log2: Get a log file of the bot. Handy for getting crash reports (Only Owner & Sudo).
+/shell2: Run shell commands (Only Owner).
+/eval2: Run Python Code Line | Lines (Only Owner).
+/exec2: Run Commands In Exec (Only Owner).
+/clearlocals2: Clear eval2 or exec2 locals (Only Owner).
+/mediainfo2: Get Mediainfo of replied file
+/wayback2: Get wayback machine links of a website or webpage
 '''
 
 def bot_help(update, context):
