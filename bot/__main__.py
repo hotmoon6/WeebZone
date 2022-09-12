@@ -326,49 +326,50 @@ def log(update, context):
 help_string = '''
 List of Commands :-
 
-/mirror - Mirror
-/zipmirror - Mirror and upload as zip
-/unzipmirror - Mirror and extract files
-/qbmirror - Mirror torrent using qBittorrent
-/qbzipmirror - Mirror torrent and upload as zip using qb
-/qbunzipmirror - Mirror torrent and extract files using qb
-/leech - Leech
-/zipleech - Leech and upload as zip
-/unzipleech - Leech and extract files
-/qbleech - Leech torrent using qBittorrent
-/qbzipleech - Leech torrent and upload as zip using qb
-/qbunzipleech - Leech torrent and extract using qb
-/clone - Copy file/folder to Drive
-/count - Count file/folder of Drive
-/watch - Mirror yt-dlp supported link
-/zipwatch - Mirror yt-dlp supported link as zip
-/leechwatch - Leech through yt-dlp supported link
-/leechzipwatch - Leech yt-dlp support link as zip
-/leechset - Leech settings
-/setthumb - Set thumbnail
-/status - Get Mirror Status message
-/rsslist - List all subscribed rss feed info
-/rssget - Get specific No. of links from specific rss feed
-/rsssub - Subscribe new rss feed
-/rssunsub - Unsubscribe rss feed by title
-/rssset - Rss Settings
-/list - Search files in Drive
-/search - Search for torrents with API
-/drop - Cancel a task
-/dropall - Cancel all tasks
-/del - Delete file/folder from Drive
-/log - Get the Bot Log
-/speedtest - Get server speedtest
-/mediainfo - Get information of media files
-/hash - Get Hash of telegram files
-/wayback - Internet archive 
-/shell - Run commands in Shell
-/restart - Restart the Bot
-/stats - Bot Usage Stats
-/usage - Heroku app usage
-/ping - Ping the Bot
-/help - All cmds with description
+NOTE: Try each command without any perfix to see more detalis.
 
+/mirror2: [url] Start mirroring to Google Drive.
+/zipmirror2: Start mirroring and upload the file/folder compressed with zip extension.
+/unzipmirror2: Start mirroring and upload the file/folder extracted from any archive extension.
+/qbmirror2: [magnet link] or Reply with Torrent - Start Mirroring to Google Drive using qBittorrent.
+/qbzipmirror2: Start mirroring using qBittorrent and upload the file/folder compressed with zip extension.
+/qbunzipmirror2: Start mirroring using qBittorrent and upload the file/folder extracted from any archive extension.
+/ytdl2: Mirror yt-dlp supported link.
+/ytdlzip2: Mirror yt-dlp supported link as zip.
+/leech2: Start leeching to Telegram.
+/zipleech2: Start leeching and upload the file/folder compressed with zip extension.
+/unzipleech2: Start leeching and upload the file/folder extracted from any archive extension.
+/qbleech2: Start leeching using qBittorrent.
+/qbzipleech2: Start leeching using qBittorrent and upload the file/folder compressed with zip extension.
+/qbunzipleech2: Start leeching using qBittorrent and upload the file/folder extracted from any archive extension.
+/ytdlleech2: Leech yt-dlp supported link.
+/ytdlzipleech2: Leech yt-dlp supported link as zip.
+/clone2 [drive_url]: Copy file/folder to Google Drive.
+/count2 [drive_url]: Count file/folder of Google Drive.
+/del2 [drive_url]: Delete file/folder from Google Drive (Only Owner & Sudo).
+/leechset2 [query]: Leech settings.
+/setthumb2: Reply photo to set it as Thumbnail.
+/btsel2: Select files from torrents by gid or reply.
+/cancel2: Cancel task by gid or reply.
+/cancelall2: [query]: Cancel all [status] tasks.
+/list2 [query]: Search in Google Drive(s).
+/search2 [query]: Search for torrents with API.
+/status2: Shows a status of all the downloads.
+/stats2: Show stats of the machine where the bot is hosted in.
+/ping2: Check how long it takes to Ping the Bot (Only Owner & Sudo).
+/authorize2: Authorize a chat or a user to use the bot (Only Owner & Sudo).
+/unauthorize2: Unauthorize a chat or a user to use the bot (Only Owner & Sudo).
+/users2: Show authorized users (Only Owner & Sudo).
+/addsudo2: Add sudo user (Only Owner).
+/rmsudo2: Remove sudo users (Only Owner).
+/restart2: Restart and update the bot (Only Owner & Sudo).
+/log2: Get a log file of the bot. Handy for getting crash reports (Only Owner & Sudo).
+/shell2: Run shell commands (Only Owner).
+/eval2: Run Python Code Line | Lines (Only Owner).
+/exec2: Run Commands In Exec (Only Owner).
+/clearlocals2: Clear eval2 or exec2 locals (Only Owner).
+/mediainfo2: Get Mediainfo of replied file
+/wayback2: Get wayback machine links of a website or webpage
 '''
 
 def bot_help(update, context):
