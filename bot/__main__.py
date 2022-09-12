@@ -326,7 +326,7 @@ def log(update, context):
 help_string = '''
 <b>List of Commands :-</b>
 
-<i>NOTE: After the Command Leave a single Space</b>
+<i>NOTE: After the Command Leave a single Space</i>
 
 /mirror2: [url] Start mirroring to Google Drive.
 
