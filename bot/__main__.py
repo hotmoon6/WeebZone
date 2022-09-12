@@ -329,20 +329,17 @@ List of Commands :-
 NOTE: Try each command without any perfix to see more detalis.
 
 /mirror2: [url] Start mirroring to Google Drive.
-
-Example: <code>/mirror2 https://yoururl.com</code>
+Example: <b>/mirror2 https://yoururl.com</b>
 or
 (Reply with URL/File)
 
 /qbmirror2: [magnet link] or Reply with Torrent - Start Mirroring to Google Drive using qBittorrent.
-
-Example: <code>/qbmirror2 magnet:?xt=urn:btih:f2cd08296a3...</code>
+Example: <b>/qbmirror2 magnet:?xt=urn:btih:f2cd08296a3...</b>
 or
 (Reply with Torrent)
 
 /clone2 [drive_url]: Copy Others file/folder to Google Drive.
-
-Example: <code>/clone2 https://drive.google.com/file/d/1e-fy8zXyz</code>
+Example: <b>/clone2 https://drive.google.com/file/d/1e-fy8zXyz</b>
 '''
 
 def bot_help(update, context):
