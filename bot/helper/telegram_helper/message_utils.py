@@ -88,7 +88,7 @@ async def sendRss_pyro(text: str):
         LOGGER.error(str(e))
         return
 
-def sendPhoto(text: str, bot, message, photo, reply_markup=None):
+def sendPhoto(text: str, bot, message: Message, photo, reply_markup=None):
     try:
         return bot.send_photo(chat_id=message.chat_id, photo=photo, reply_to_message_id=message.message_id,
             caption=text, reply_markup=reply_markup, parse_mode='html')
@@ -192,9 +192,9 @@ def sendStatusMessage(msg, bot):
             deleteMessage(bot, message)
             del status_reply_dict[msg.chat.id]
         if buttons == "":
-            message = sendMessage(progress, bot, msg)
+            message = sendPhoto(random.choice(PICS), progress, bot, msg)
         else:
-            message = sendMarkup(progress, bot, msg, buttons)
+            message = sendPhoto(random.choice(PICS), progress, bot, msg, buttons)
         status_reply_dict[msg.chat.id] = [message, time()]
         if not Interval:
             Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
