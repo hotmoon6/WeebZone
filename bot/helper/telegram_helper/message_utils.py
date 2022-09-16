@@ -182,7 +182,7 @@ def update_all_messages(force=False):
                 status_reply_dict[chat_id][0].text = msg
                 status_reply_dict[chat_id][1] = time()
 
-def sendStatusMessage(msg, bot, update, context):
+def sendStatusMessage(msg, bot):
     progress, buttons = get_readable_message()
     if progress is None:
         return
