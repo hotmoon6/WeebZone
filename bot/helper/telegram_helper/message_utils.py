@@ -194,7 +194,7 @@ def sendStatusMessage(msg, bot):
         if buttons == "":
             message = sendMessage(progress, bot, msg)
         else:
-            message = sendPhoto(random.choice(PICS), progress, bot, msg, buttons)
+            message = sendMarkup(progress, bot, msg, buttons)
         status_reply_dict[msg.chat.id] = [message, time()]
         if not Interval:
             Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
