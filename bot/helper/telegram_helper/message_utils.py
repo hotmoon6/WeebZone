@@ -179,7 +179,7 @@ def update_all_messages(force=False):
                 if rmsg == "Message to edit not found":
                     del status_reply_dict[chat_id]
                     return
-                status_reply_dict[chat_id][0].text = msg
+                status_reply_dict[chat_id][0] = msg
                 status_reply_dict[chat_id][1] = time()
 
 def sendStatusMessage(msg, bot):
