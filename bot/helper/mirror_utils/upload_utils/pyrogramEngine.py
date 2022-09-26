@@ -192,7 +192,7 @@ class TgUploader:
                                 except Exception as err:
                                     LOGGER.error(f"Failed To Send Image in PM:\n{err}")
                     else:
-                        self.__sent_msg = self.__sent_msg(photo=up_path,
+                        self.__sent_msg = self.__sent_msg.reply_photo(photo=up_path,
                                                                       quote=True,
                                                                       caption=cap_mono,
                                                                       disable_notification=True,
