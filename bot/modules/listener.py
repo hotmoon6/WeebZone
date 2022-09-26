@@ -425,7 +425,7 @@ class MirrorLeechListener:
                     sleep(1.5)
                     if FORCE_BOT_PM is False:
                         if PICS:
-                            uploadmsg = sendPhoto(msg + fmsg + pmwarn + logleechwarn + warnmsg, self.bot, self.message, random.choice(PICS), InlineKeyboardMarkup(buttons.build_menu(2)))
+                            uploadmsg = sendMarkup(msg + fmsg + pmwarn + logleechwarn + warnmsg, self.bot, self.message, InlineKeyboardMarkup(buttons.build_menu(2)))
                         else:
                             uploadmsg = sendMarkup(msg + fmsg + pmwarn + logleechwarn + warnmsg, self.bot, self.message, InlineKeyboardMarkup(buttons.build_menu(2)))
                         Thread(target=auto_delete_upload_message, args=(bot, self.message, uploadmsg)).start()
